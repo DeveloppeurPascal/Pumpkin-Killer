@@ -16515,15 +16515,15 @@ object frmMain: TfrmMain
   end
   object zoneGameOver: TLayout
     Align = Client
-    Size.Width = 640.000000000000000000
+    Size.Width = 649.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 1
+    TabOrder = 2
     OnResize = zoneGameOverResize
     object imgTitreGameOver: TGlyph
       Align = Top
-      Size.Width = 640.000000000000000000
+      Size.Width = 649.000000000000000000
       Size.Height = 16.000000000000000000
       Size.PlatformDefault = False
     end
@@ -16531,7 +16531,7 @@ object frmMain: TfrmMain
       Anchors = []
       Images = dmAssetsBoutons.imgBoutons
       ImageIndex = 9
-      Position.X = 100.000000000000000000
+      Position.X = 101.968750000000000000
       Position.Y = 100.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 22.000000000000000000
@@ -16544,7 +16544,7 @@ object frmMain: TfrmMain
       Anchors = []
       Images = dmAssetsBoutons.imgBoutons
       ImageIndex = 2
-      Position.X = 360.000000000000000000
+      Position.X = 365.625000000000000000
       Position.Y = 312.000000000000000000
       TabOrder = 2
       Text = 'Retour au menu'
@@ -16553,7 +16553,7 @@ object frmMain: TfrmMain
     object zoneGameOverScore: TLayout
       Align = Top
       Position.Y = 16.000000000000000000
-      Size.Width = 640.000000000000000000
+      Size.Width = 649.000000000000000000
       Size.Height = 193.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -16565,7 +16565,7 @@ object frmMain: TfrmMain
         Margins.Top = 10.000000000000000000
         Margins.Right = 10.000000000000000000
         Margins.Bottom = 10.000000000000000000
-        Size.Width = 620.000000000000000000
+        Size.Width = 629.000000000000000000
         Size.Height = 173.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
@@ -16578,7 +16578,7 @@ object frmMain: TfrmMain
         StyledSettings = [Family, Size]
         Scale.X = 2.000000000000000000
         Scale.Y = 3.000000000000000000
-        Size.Width = 320.000000000000000000
+        Size.Width = 324.500000000000000000
         Size.Height = 64.333335876464840000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -16602,7 +16602,8 @@ object frmMain: TfrmMain
     Size.Width = 649.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
+    Visible = False
+    TabOrder = 3
     OnResize = zoneMenuResize
     object imgTitreMenu: TGlyph
       Align = Top
@@ -16680,7 +16681,7 @@ object frmMain: TfrmMain
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 3
+    TabOrder = 4
     OnResize = zoneBackgroundResize
   end
   object TimerCitrouilles: TTimer
@@ -17348,6 +17349,115 @@ object frmMain: TfrmMain
           32323232320B4E6F726D616C436F6C6F7207097846463232323232320C507265
           73736564436F6C6F720709784646323232323232000000}
       end>
+  end
+  object zoneCreditsDuJeu: TLayout
+    Align = Client
+    Size.Width = 649.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnResize = zoneCreditsDuJeuResize
+    object imgTitreCreditsDuJeu: TGlyph
+      Align = Top
+      Size.Width = 649.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnRetourCreditsDuJeu: TButton
+      Anchors = []
+      Images = dmAssetsBoutons.imgBoutons
+      ImageIndex = 2
+      Position.X = 365.625000000000000000
+      Position.Y = 312.000000000000000000
+      TabOrder = 1
+      Text = 'Retour au menu'
+      OnClick = btnRetourCreditsDuJeuClick
+    end
+    object zoneCreditsDuJeuTexte: TLayout
+      Align = Top
+      Position.Y = 16.000000000000000000
+      Size.Width = 649.000000000000000000
+      Size.Height = 193.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object zoneCreditsDuJeuTexteBackground: TRectangle
+        Align = Contents
+        Fill.Color = claCornsilk
+        Opacity = 0.600000023841857900
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 629.000000000000000000
+        Size.Height = 173.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 30.000000000000000000
+        YRadius = 20.000000000000000000
+      end
+      object VertScrollBox1: TVertScrollBox
+        Align = Client
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 609.000000000000000000
+        Size.Height = 153.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 609.000000000000000000
+        Viewport.Height = 153.000000000000000000
+        object lblCreditsDuJeu: TLabel
+          Align = MostTop
+          AutoSize = True
+          StyledSettings = [Family, Size]
+          Scale.X = 2.000000000000000000
+          Scale.Y = 3.000000000000000000
+          Size.Width = 304.500000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claCoral
+          TextSettings.VertAlign = Leading
+          Text = 'lblGameOver'
+          TabOrder = 2
+          TabStop = False
+          object ShadowEffect1: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.300000011920929000
+            Opacity = 0.600000023841857900
+            ShadowColor = claBlack
+          end
+        end
+        object lblCreditsDuJeuURL: TLabel
+          Align = MostTop
+          AutoSize = True
+          StyledSettings = [Family, Size]
+          HitTest = True
+          Position.Y = 48.000000000000000000
+          Scale.X = 2.000000000000000000
+          Scale.Y = 3.000000000000000000
+          Size.Width = 304.500000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claCoral
+          TextSettings.VertAlign = Leading
+          Text = 'lblGameOver'
+          TabOrder = 1
+          TabStop = False
+          OnClick = lblCreditsDuJeuURLClick
+          object ShadowEffect3: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.300000011920929000
+            Opacity = 0.600000023841857900
+            ShadowColor = claBlack
+          end
+        end
+      end
+    end
   end
   object ActionList1: TActionList
     Left = 152

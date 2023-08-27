@@ -11,7 +11,7 @@ uses
   FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, dmBoutons;
 
 type
-  TEcranEnCours = (eecAucun, eecMenu, eecJeu, eecFinJeu, eecScores);
+  TEcranEnCours = (eecAucun, eecMenu, eecJeu, eecFinJeu, eecScores, eecCredits);
 
   TfrmMain = class(TForm)
     zoneJeu: TLayout;
@@ -43,6 +43,16 @@ type
     btnHallOfFame: TButton;
     btnCredits: TButton;
     btnQuitter: TButton;
+    zoneCreditsDuJeu: TLayout;
+    imgTitreCreditsDuJeu: TGlyph;
+    btnRetourCreditsDuJeu: TButton;
+    zoneCreditsDuJeuTexte: TLayout;
+    zoneCreditsDuJeuTexteBackground: TRectangle;
+    VertScrollBox1: TVertScrollBox;
+    lblCreditsDuJeu: TLabel;
+    ShadowEffect1: TShadowEffect;
+    lblCreditsDuJeuURL: TLabel;
+    ShadowEffect3: TShadowEffect;
     procedure FormCreate(Sender: TObject);
     procedure TimerCitrouillesTimer(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -59,6 +69,9 @@ type
     procedure ZoneMenuBoutonsResize(Sender: TObject);
     procedure btnCreditsClick(Sender: TObject);
     procedure btnMusiqueOnOffClick(Sender: TObject);
+    procedure btnRetourCreditsDuJeuClick(Sender: TObject);
+    procedure zoneCreditsDuJeuResize(Sender: TObject);
+    procedure lblCreditsDuJeuURLClick(Sender: TObject);
   private
     { Déclarations privées }
     listeCitrouilles: TListeCitrouilles;
@@ -66,6 +79,8 @@ type
     function NouvelleCitrouille: TCitrouille;
     procedure afficheMenu;
     procedure masqueMenu;
+    procedure afficheCreditsDuJeu;
+    procedure masqueCreditsDuJeu;
     procedure afficheJeu;
     procedure masqueJeu;
     procedure afficheGameOver;
@@ -97,16 +112,60 @@ begin
   TimerCitrouilles.Enabled := true;
 end;
 
+procedure TfrmMain.afficheCreditsDuJeu;
+begin
+  imgTitreCreditsDuJeu.images := dmAssetsTitres.imgTitres;
+  masqueJeu;
+  masqueGameOver;
+  masqueMenu;
+  afficheBackground;
+
+  lblCreditsDuJeu.Text := 'Pumpkin Killer' + slinebreak + '(c) 2018-' +
+    formatdatetime('YYYY', now) + ' Patrick Prémartin' + slinebreak +
+    slinebreak;
+  lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
+    'Développement réalisé sous Delphi dans un projet FireMonkey.' + slinebreak
+    + slinebreak;
+  lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
+    'Les images des citrouilles et boutons d''interface sont sous licence de Kolopach chez Adobe Stock (achetées chez Fotolia).'
+    + slinebreak + slinebreak;
+  lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
+    'Retrouvez nos informations sur';
+  lblCreditsDuJeuURL.Text := 'https://pumpkinkiller.gamolf.fr';
+
+  zoneCreditsDuJeu.Visible := true;
+  zoneCreditsDuJeu.BringToFront;
+  EcranEnCours := eecCredits;
+
+  VertScrollBox1.ViewportPosition := TPointF.Create(0, 0);
+
+{$IF Defined(iOS) or Defined(ANDROID)}
+  if VertScrollBox1.Tag = 0 then
+    tthread.ForceQueue(nil,
+      procedure
+      begin
+        VertScrollBox1.Tag := 1;
+        with ttext.Create(self) do
+        begin
+          parent := VertScrollBox1;
+          Text := ' ';
+          align := talignlayout.Top;
+        end;
+      end);
+{$ENDIF}
+end;
+
 procedure TfrmMain.afficheGameOver;
 begin
   imgTitreGameOver.images := dmAssetsTitres.imgTitres;
-  lblGameOver.Text := 'Score : ' + score.score.ToString + sLineBreak +
-    'Niveau : ' + score.niveau.ToString;
-  actPartage.TextMessage := 'J''ai atteint le niveau ' + score.niveau.ToString +
-    ' avec le score de ' + score.score.ToString +
+  lblGameOver.Text := 'Score : ' + score.score.tostring + slinebreak +
+    'Niveau : ' + score.niveau.tostring;
+  actPartage.TextMessage := 'J''ai atteint le niveau ' + score.niveau.tostring +
+    ' avec le score de ' + score.score.tostring +
     ' points sur Pumpkin Killer. Feras-tu mieux que moi ? #pumpkinkiller #gamolf https://pumpkinkiller.gamolf.fr';
   masqueJeu;
   masqueMenu;
+  masqueCreditsDuJeu;
   afficheBackground;
   zoneGameOver.Visible := true;
   zoneGameOver.BringToFront;
@@ -117,6 +176,7 @@ procedure TfrmMain.afficheJeu;
 begin
   masqueMenu;
   masqueGameOver;
+  masqueCreditsDuJeu;
   afficheBackground;
   score.onScoreChange := ChangeScore;
   score.onNiveauChange := ChangeNiveau;
@@ -133,6 +193,7 @@ begin
   imgTitreMenu.images := dmAssetsTitres.imgTitres;
   masqueJeu;
   masqueGameOver;
+  masqueCreditsDuJeu;
   afficheBackground;
   zoneMenu.Visible := true;
   zoneMenu.BringToFront;
@@ -141,7 +202,7 @@ end;
 
 procedure TfrmMain.btnCreditsClick(Sender: TObject);
 begin
-// TODO : à compléter
+  afficheCreditsDuJeu;
 end;
 
 procedure TfrmMain.btnJouerClick(Sender: TObject);
@@ -151,7 +212,7 @@ end;
 
 procedure TfrmMain.btnMusiqueOnOffClick(Sender: TObject);
 begin
-// TODO : à compléter
+  // TODO : à compléter
 end;
 
 procedure TfrmMain.btnPartageClick(Sender: TObject);
@@ -178,6 +239,11 @@ begin
   Close;
 end;
 
+procedure TfrmMain.btnRetourCreditsDuJeuClick(Sender: TObject);
+begin
+  afficheMenu;
+end;
+
 procedure TfrmMain.btnRetourGameOverClick(Sender: TObject);
 begin
   afficheMenu;
@@ -185,19 +251,19 @@ end;
 
 procedure TfrmMain.ChangeNbVies;
 begin
-  lblVies.Text := 'Vies : ' + score.NbVies.ToString;
+  lblVies.Text := 'Vies : ' + score.NbVies.tostring;
   { TODO : ajouter animation pour changement du nombre de vies }
 end;
 
 procedure TfrmMain.ChangeNiveau;
 begin
-  lblNiveau.Text := 'Niveau : ' + score.niveau.ToString;
+  lblNiveau.Text := 'Niveau : ' + score.niveau.tostring;
   { TODO : ajouter animation pour changement du niveau }
 end;
 
 procedure TfrmMain.ChangeScore;
 begin
-  lblScore.Text := 'Score : ' + score.score.ToString;
+  lblScore.Text := 'Score : ' + score.score.tostring;
   { TODO : ajouter animation pour changement du score }
 end;
 
@@ -215,7 +281,7 @@ begin
 end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
-  var KeyChar: Char; Shift: TShiftState);
+var KeyChar: Char; Shift: TShiftState);
 begin
   if Key in [vkhardwareback, vkescape] then
   begin
@@ -227,9 +293,7 @@ begin
           { TODO : activation de la pause }
           afficheGameOver;
         end;
-      eecFinJeu:
-        afficheMenu;
-      eecScores:
+      eecFinJeu, eecScores, eecCredits:
         afficheMenu;
       eecMenu:
         Close;
@@ -244,6 +308,12 @@ begin
   { TODO : gérer la mise en veille du programme et sa réactivation }
 end;
 
+procedure TfrmMain.lblCreditsDuJeuURLClick(Sender: TObject);
+begin
+  if assigned(Sender) and (Sender is TLabel) then
+    url_Open_In_Browser((Sender as TLabel).Text);
+end;
+
 procedure TfrmMain.masqueBackground;
 begin
   if zoneBackground.Visible then
@@ -251,6 +321,15 @@ begin
     TimerCitrouilles.Enabled := false;
     listeCitrouilles.vide;
     zoneBackground.Visible := false;
+  end;
+end;
+
+procedure TfrmMain.masqueCreditsDuJeu;
+begin
+  if zoneCreditsDuJeu.Visible then
+  begin
+    masqueBackground;
+    zoneCreditsDuJeu.Visible := false;
   end;
 end;
 
@@ -291,25 +370,49 @@ procedure TfrmMain.TimerCitrouillesTimer(Sender: TObject);
 var
   Citrouille: TCitrouille;
 begin
-  if TimerCitrouilles.Enabled then
-  begin
-    if listeCitrouilles.Count < 1 then
-      listeCitrouilles.Add(NouvelleCitrouille);
-    if (random(100) < 30) and
-      (listeCitrouilles.Count < listeCitrouilles.NbCitrouillesMax
-      (EcranEnCours = eecJeu)) then
-      listeCitrouilles.Add(NouvelleCitrouille);
-    for Citrouille in listeCitrouilles do
-      Citrouille.Bouge;
-    if (EcranEnCours = eecJeu) and (score.NbVies < 1) then
-      afficheGameOver;
-  end;
+  if not TimerCitrouilles.Enabled then
+    exit;
+  if not assigned(listeCitrouilles) then
+    exit;
+
+  if listeCitrouilles.Count < 1 then
+    listeCitrouilles.Add(NouvelleCitrouille);
+  if (random(100) < 30) and
+    (listeCitrouilles.Count < listeCitrouilles.NbCitrouillesMax
+    (EcranEnCours = eecJeu)) then
+    listeCitrouilles.Add(NouvelleCitrouille);
+  for Citrouille in listeCitrouilles do
+    Citrouille.Bouge;
+  if (EcranEnCours = eecJeu) and (score.NbVies < 1) then
+    afficheGameOver;
 end;
 
 procedure TfrmMain.zoneBackgroundResize(Sender: TObject);
 begin
   if assigned(listeCitrouilles) then
     listeCitrouilles.SetTailleMax;
+end;
+
+procedure TfrmMain.zoneCreditsDuJeuResize(Sender: TObject);
+var
+  largeur, hauteur: single;
+  X, Y, w, h: single;
+begin
+  hauteur := zoneCreditsDuJeu.height / 4;
+  imgTitreCreditsDuJeu.ImageIndex :=
+    ifthen((zoneCreditsDuJeu.width > zoneCreditsDuJeu.height), 1, 0);
+  imgTitreCreditsDuJeu.height := hauteur;
+  zoneCreditsDuJeuTexte.height := hauteur * 2;
+  btnRetourGameOver.Visible := true;
+  largeur := zoneCreditsDuJeu.width;
+  w := min(max(min(200, hauteur - 20), 44), largeur - 20);
+  h := w;
+  X := (largeur - w) / 2 + 10;
+  Y := hauteur * 3 + (hauteur - h) / 2;
+  btnRetourCreditsDuJeu.width := w;
+  btnRetourCreditsDuJeu.height := h;
+  btnRetourCreditsDuJeu.Position.X := X;
+  btnRetourCreditsDuJeu.Position.Y := Y;
 end;
 
 procedure TfrmMain.zoneGameOverResize(Sender: TObject);
