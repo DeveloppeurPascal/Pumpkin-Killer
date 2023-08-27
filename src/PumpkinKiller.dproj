@@ -6,7 +6,7 @@
         <MainSource>PumpkinKiller.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">iOSDevice64</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>169107</TargetedPlatforms>
         <AppType>Application</AppType>
         <Profile Condition="'$(Platform)'=='OSX64'">iMac</Profile>
@@ -614,6 +614,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\lib-externes\librairies\u_urlOpen.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -659,12 +660,134 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiv7aFile"/>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteName>libPumpkinKiller.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile"/>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android64">
+                        <RemoteName>libPumpkinKiller.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile"/>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile"/>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
+                    <Platform Name="Android64">
+                        <RemoteName>libPumpkinKiller.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile LocalName="$(BDS)\lib\android\release\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile"/>
                 <DeployFile LocalName="$(BDS)\lib\android\release\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile"/>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Android64">
+                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="Android64">
+                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\_PRIVE\music\BlueJay_Studio_8_bit_Halloween.wav" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteName>BlueJay_Studio_8_bit_Halloween.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-100x100.png" Configuration="Debug" Class="iPad_SpotLight100"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-100x100.png" Configuration="Release" Class="iPad_SpotLight100"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-1024x1024.jpg" Configuration="Debug" Class="iOS_AppStore1024"/>
@@ -683,6 +806,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-120x120.jpg" Configuration="Release" Class="iPhone_Spotlight120"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-144x144.png" Configuration="Debug" Class="iPad_AppIcon144"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-144x144.png" Configuration="Release" Class="iPad_AppIcon144"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
@@ -709,12 +838,30 @@
                 </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-180x180.jpg" Configuration="Release" Class="iPhone_AppIcon180"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-192x192.png" Configuration="Debug" Class="Android_LauncherIcon192"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-192x192.png" Configuration="Debug" Class="Android_LauncherIcon192">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-192x192.png" Configuration="Release" Class="Android_LauncherIcon192"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-24x24.png" Configuration="Debug" Class="Android_NotificationIcon24"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-24x24.png" Configuration="Debug" Class="Android_NotificationIcon24">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-24x24.png" Configuration="Release" Class="Android_NotificationIcon24"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-29x29.png" Configuration="Debug" Class="iPhone_Spotlight29"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-29x29.png" Configuration="Release" Class="iPad_Setting29"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-36x36.png" Configuration="Debug" Class="Android_NotificationIcon36"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-36x36.png" Configuration="Debug" Class="Android_NotificationIcon36">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-36x36.png" Configuration="Release" Class="Android_NotificationIcon36"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-40x40.jpg" Configuration="Debug" Class="iPhone_Notification40"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-40x40.jpg" Configuration="Debug" Class="iPhone_Notification40">
@@ -733,6 +880,12 @@
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-44x44.png" Configuration="Release" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-48x48.png" Configuration="Debug" Class="Android_NotificationIcon48"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-48x48.png" Configuration="Release" Class="Android_NotificationIcon48"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-50x50.png" Configuration="Debug" Class="iPad_SpotLight50"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-50x50.png" Configuration="Release" Class="iPad_SpotLight50"/>
@@ -761,6 +914,12 @@
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-60x60.jpg" Configuration="Release" Class="iPhone_Notification60"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-60x60.png" Configuration="Debug" Class="iPhone_AppIcon60"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-60x60.png" Configuration="Release" Class="iPhone_AppIcon60"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-72x72.png" Configuration="Debug" Class="Android_NotificationIcon72">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-72x72.png" Configuration="Debug" Class="iPad_AppIcon72"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-72x72.png" Configuration="Release" Class="iPad_AppIcon72"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-76x76.png" Configuration="Debug" Class="iPad_AppIcon76"/>
@@ -789,18 +948,79 @@
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-87x87.png" Configuration="Debug" Class="iPhone_AppIcon87"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-87x87.png" Configuration="Release" Class="iPhone_AppIcon87"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-96x96.png" Configuration="Debug" Class="Android_NotificationIcon96"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller-96x96.png" Configuration="Debug" Class="Android_NotificationIcon96">
+                    <Platform Name="Android64">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller-96x96.png" Configuration="Release" Class="Android_NotificationIcon96"/>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller.icns" Configuration="Debug" Class="ProjectOSXResource"/>
+                <DeployFile LocalName="..\assets\icones\pumpkinkiller.icns" Configuration="Debug" Class="ProjectOSXResource">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>PumpkinKiller.icns</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\assets\icones\pumpkinkiller.icns" Configuration="Release" Class="ProjectOSXResource"/>
                 <DeployFile LocalName="Android64\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest"/>
+                <DeployFile LocalName="Android64\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\PumpkinKiller.classes" Configuration="Debug" Class="AndroidClasses"/>
+                <DeployFile LocalName="Android64\Debug\PumpkinKiller.classes" Configuration="Debug" Class="AndroidClasses">
+                    <Platform Name="Android64">
+                        <Operation>64</Operation>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\colors.xml" Configuration="Debug" Class="Android_Colors"/>
+                <DeployFile LocalName="Android64\Debug\colors.xml" Configuration="Debug" Class="Android_Colors">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\libPumpkinKiller.so" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Android64\Debug\libPumpkinKiller.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android64">
+                        <RemoteName>libPumpkinKiller.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\provider_paths.xml" Configuration="Debug" Class="AndroidFileProvider"/>
+                <DeployFile LocalName="Android64\Debug\provider_paths.xml" Configuration="Debug" Class="AndroidFileProvider">
+                    <Platform Name="Android64">
+                        <RemoteName>provider_paths.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef"/>
+                <DeployFile LocalName="Android64\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\strings.xml" Configuration="Debug" Class="Android_Strings"/>
+                <DeployFile LocalName="Android64\Debug\strings.xml" Configuration="Debug" Class="Android_Strings">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21"/>
+                <DeployFile LocalName="Android64\Debug\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21">
+                    <Platform Name="Android64">
+                        <RemoteName>styles.xml</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles"/>
+                <DeployFile LocalName="Android64\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
+                    <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Release\AndroidManifest.xml" Configuration="Release" Class="ProjectAndroidManifest"/>
                 <DeployFile LocalName="Android64\Release\PumpkinKiller.classes" Configuration="Release" Class="AndroidClasses"/>
                 <DeployFile LocalName="Android64\Release\colors.xml" Configuration="Release" Class="Android_Colors"/>
@@ -829,13 +1049,42 @@
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller.entitlements" Configuration="Release" Class="ProjectOSXEntitlements"/>
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller.info.plist" Configuration="Release" Class="ProjectOSXInfoPList"/>
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.dSYM" Configuration="Debug" Class="ProjectOSXDebug">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>PumpkinKiller</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements"/>
+                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements">
+                    <Platform Name="OSXARM64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList"/>
+                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>Info.plist</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>PumpkinKiller</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="OSXARM64\Release\PumpkinKiller.entitlements" Configuration="Release" Class="ProjectOSXEntitlements"/>
                 <DeployFile LocalName="OSXARM64\Release\PumpkinKiller.info.plist" Configuration="Release" Class="ProjectOSXInfoPList"/>
                 <DeployFile LocalName="OSXARM64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win32\Debug\PumpkinKiller.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\PumpkinKiller.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>PumpkinKiller.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Release\AppxManifest.xml" Configuration="Release" Class="ProjectUWPManifest"/>
                 <DeployFile LocalName="Win32\Release\PumpkinKiller.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Release\AppxManifest.xml" Configuration="Release" Class="ProjectUWPManifest"/>
@@ -871,6 +1120,12 @@
                 </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\344x594.png" Configuration="Release" Class="iPhone_LaunchDark3x"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\426x320.png" Configuration="Debug" Class="Android_SplashImage426"/>
+                <DeployFile LocalName="\\nasbox01\Gamolf\_design\426x320.png" Configuration="Debug" Class="Android_SplashImage426">
+                    <Platform Name="Android64">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\426x320.png" Configuration="Release" Class="Android_SplashImage426"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\458x792.png" Configuration="Debug" Class="iPad_LaunchDark2x"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\458x792.png" Configuration="Debug" Class="iPad_LaunchDark2x">
@@ -881,14 +1136,32 @@
                 </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\458x792.png" Configuration="Release" Class="iPad_LaunchDark2x"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\470x320.png" Configuration="Debug" Class="Android_SplashImage470"/>
+                <DeployFile LocalName="\\nasbox01\Gamolf\_design\470x320.png" Configuration="Debug" Class="Android_SplashImage470">
+                    <Platform Name="Android64">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\470x320.png" Configuration="Release" Class="Android_SplashImage470"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\640x480.png" Configuration="Debug" Class="Android_SplashImage640"/>
+                <DeployFile LocalName="\\nasbox01\Gamolf\_design\640x480.png" Configuration="Debug" Class="Android_SplashImage640">
+                    <Platform Name="Android64">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\640x480.png" Configuration="Release" Class="Android_SplashImage640"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\750x1334.png" Configuration="Debug" Class="iPhone_Launch750"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\750x1334.png" Configuration="Release" Class="iPhone_Launch750"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\768x1004.png" Configuration="Debug" Class="iPad_Launch768"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\768x1004.png" Configuration="Release" Class="iPad_Launch768"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\960x720.png" Configuration="Debug" Class="Android_SplashImage960"/>
+                <DeployFile LocalName="\\nasbox01\Gamolf\_design\960x720.png" Configuration="Debug" Class="Android_SplashImage960">
+                    <Platform Name="Android64">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\960x720.png" Configuration="Release" Class="Android_SplashImage960"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\gamolf-1024x768.png" Configuration="Debug" Class="iPad_Launch1024x768"/>
                 <DeployFile LocalName="\\nasbox01\Gamolf\_design\gamolf-1024x768.png" Configuration="Release" Class="iPad_Launch1024x768"/>

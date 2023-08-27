@@ -16602,7 +16602,6 @@ object frmMain: TfrmMain
     Size.Width = 649.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     TabOrder = 3
     OnResize = zoneMenuResize
     object imgTitreMenu: TGlyph
@@ -16646,6 +16645,9 @@ object frmMain: TfrmMain
         TabOrder = 3
         Text = 'Musique on/off'
         OnClick = btnMusiqueOnOffClick
+        object MusicMonochromeEffect1: TMonochromeEffect
+          Enabled = False
+        end
       end
       object btnHallOfFame: TButton
         Anchors = []
@@ -17355,6 +17357,7 @@ object frmMain: TfrmMain
     Size.Width = 649.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 1
     OnResize = zoneCreditsDuJeuResize
     object imgTitreCreditsDuJeu: TGlyph

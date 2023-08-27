@@ -3,12 +3,32 @@ unit fMain;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
-  System.Variants, System.generics.collections,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.ImgList, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects,
-  FMX.Effects, uCitrouilles, FMX.Menus, FMX.ScrollBox, System.Actions,
-  FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, dmBoutons;
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  System.generics.collections,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
+  FMX.ImgList,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls,
+  FMX.Objects,
+  FMX.Effects,
+  uCitrouilles,
+  FMX.Menus,
+  FMX.ScrollBox,
+  System.Actions,
+  FMX.ActnList,
+  FMX.StdActns,
+  FMX.MediaLibrary.Actions,
+  dmBoutons,
+  Gamolf.FMX.MusicLoop, FMX.Filter.Effects;
 
 type
   TEcranEnCours = (eecAucun, eecMenu, eecJeu, eecFinJeu, eecScores, eecCredits);
@@ -53,6 +73,7 @@ type
     ShadowEffect1: TShadowEffect;
     lblCreditsDuJeuURL: TLabel;
     ShadowEffect3: TShadowEffect;
+    MusicMonochromeEffect1: TMonochromeEffect;
     procedure FormCreate(Sender: TObject);
     procedure TimerCitrouillesTimer(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -76,6 +97,7 @@ type
     { Déclarations privées }
     listeCitrouilles: TListeCitrouilles;
     EcranEnCours: TEcranEnCours;
+    FMusicOnOff: boolean;
     function NouvelleCitrouille: TCitrouille;
     procedure afficheMenu;
     procedure masqueMenu;
@@ -87,7 +109,10 @@ type
     procedure masqueGameOver;
     procedure afficheBackground;
     procedure masqueBackground;
+    procedure LoadAndStartMusic;
+    procedure SetMusicOnOff(const Value: boolean);
   public
+    property MusicOnOff: boolean read FMusicOnOff write SetMusicOnOff;
     { Déclarations publiques }
     procedure ChangeScore;
     procedure ChangeNbVies;
@@ -101,7 +126,15 @@ implementation
 
 {$R *.fmx}
 
-uses dmImages, System.Math, uScores, u_urlOpen, dmLogos, dmTitres, FMX.Platform,
+uses
+  System.IOUtils,
+  dmImages,
+  System.Math,
+  uScores,
+  u_urlOpen,
+  dmLogos,
+  dmTitres,
+  FMX.Platform,
   FMX.MediaLibrary;
 
 procedure TfrmMain.afficheBackground;
@@ -127,8 +160,11 @@ begin
     'Développement réalisé sous Delphi dans un projet FireMonkey.' + slinebreak
     + slinebreak;
   lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
-    'Les images des citrouilles et boutons d''interface sont sous licence de Kolopach chez Adobe Stock (achetées chez Fotolia).'
+    'Les images des citrouilles et boutons d''interface sont de Kolopach sous licence Adobe Stock (achetées chez Fotolia).'
     + slinebreak + slinebreak;
+  lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
+    'La musique de fond est de Bluejay Studio sous licence Jamendo.' +
+    slinebreak + slinebreak;
   lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
     'Retrouvez nos informations sur';
   lblCreditsDuJeuURL.Text := 'https://pumpkinkiller.gamolf.fr';
@@ -212,7 +248,7 @@ end;
 
 procedure TfrmMain.btnMusiqueOnOffClick(Sender: TObject);
 begin
-  // TODO : à compléter
+  MusicOnOff := not MusicOnOff;
 end;
 
 procedure TfrmMain.btnPartageClick(Sender: TObject);
@@ -272,6 +308,8 @@ begin
   listeCitrouilles := TListeCitrouilles.Create;
   EcranEnCours := eecAucun;
   afficheMenu;
+
+  LoadAndStartMusic;
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -312,6 +350,46 @@ procedure TfrmMain.lblCreditsDuJeuURLClick(Sender: TObject);
 begin
   if assigned(Sender) and (Sender is TLabel) then
     url_Open_In_Browser((Sender as TLabel).Text);
+end;
+
+procedure TfrmMain.LoadAndStartMusic;
+var
+  ml: tmusicloop;
+  Nomfichier: string;
+begin
+  ml := MusicLoop;
+{$IF defined(ANDROID)}
+  // deploy in .\assets\internal\
+  Nomfichier := tpath.GetDocumentsPath;
+{$ELSEIF defined(MSWINDOWS)}
+  // deploy in ;\
+{$IFDEF DEBUG}
+  Nomfichier := '..\..\..\_PRIVE\music';
+{$ELSE}
+  Nomfichier := extractfilepath(paramstr(0));
+{$ENDIF}
+{$ELSEIF defined(IOS)}
+  // deploy in .\
+  Nomfichier := extractfilepath(paramstr(0));
+{$ELSEIF defined(MACOS)}
+  // deploy in Contents\MacOS
+  Nomfichier := extractfilepath(paramstr(0));
+{$ELSEIF Defined(LINUX)}
+  Nomfichier := extractfilepath(paramstr(0));
+{$ELSE}
+{$MESSAGE FATAL 'OS non supporté'}
+{$ENDIF}
+  // Nomfichier := tpath.combine(Nomfichier, '8_bit_Halloween_FiluAndDina_3.mp3');
+  Nomfichier := tpath.combine(Nomfichier, 'BlueJay_Studio_8_bit_Halloween.wav');
+
+  if not tfile.Exists(Nomfichier) then
+    raise exception.Create('Can''t find the background music file.');
+
+  ml.Load(Nomfichier);
+  // TODO : paramétrer le volume sonore de la musique d'ambiance
+  // TODO : gérer l'activation ou pas de la musique d'ambiance
+  ml.Volume := 100;
+  MusicOnOff := true;
 end;
 
 procedure TfrmMain.masqueBackground;
@@ -364,6 +442,22 @@ end;
 function TfrmMain.NouvelleCitrouille: TCitrouille;
 begin
   result := TCitrouille.Create(self, zoneBackground);
+end;
+
+procedure TfrmMain.SetMusicOnOff(const Value: boolean);
+begin
+  FMusicOnOff := Value;
+
+  if MusicLoop.IsActive then
+    case FMusicOnOff of
+      true:
+        MusicLoop.Play;
+      false:
+        MusicLoop.Pause;
+    end;
+
+  MusicMonochromeEffect1.Enabled := (not MusicLoop.IsActive) or
+    (not MusicLoop.IsPlaying) or MusicLoop.isPaused;
 end;
 
 procedure TfrmMain.TimerCitrouillesTimer(Sender: TObject);

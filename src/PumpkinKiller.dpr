@@ -10,7 +10,8 @@ uses
   dmBoutons in 'dmBoutons.pas' {dmAssetsBoutons: TDataModule},
   dmLogos in 'dmLogos.pas' {dmAssetsLogos: TDataModule},
   dmTitres in 'dmTitres.pas' {dmAssetsTitres: TDataModule},
-  u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas';
+  u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas',
+  Gamolf.FMX.MusicLoop in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas';
 
 {$R *.res}
 
@@ -23,3 +24,4 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.
+
