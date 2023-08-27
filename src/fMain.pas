@@ -104,7 +104,7 @@ end;
 procedure TfrmMain.afficheGameOver;
 begin
   imgTitreGameOver.images := dmAssetsTitres.imgTitres;
-  lblGameOver.Text := 'Score : ' + score.score.ToString + #13#10 + 'Niveau : ' +
+  lblGameOver.Text := 'Score : ' + score.score.ToString + sLineBreak + 'Niveau : ' +
     score.niveau.ToString;
   actPartage.TextMessage := 'J''ai atteint le niveau ' + score.niveau.ToString +
     ' avec le score de ' + score.score.ToString +
