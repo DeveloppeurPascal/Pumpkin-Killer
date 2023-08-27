@@ -29,12 +29,6 @@ type
     ActionList1: TActionList;
     actPartage: TShowShareSheetAction;
     btnPartage: TButton;
-    btnJouer: TButton;
-    btnQuitter: TButton;
-    btnMusiqueOnOff: TButton;
-    btnBruitagesOnOff: TButton;
-    btnCredits: TButton;
-    btnHallOfFame: TButton;
     StyleBook1: TStyleBook;
     imgTitreMenu: TGlyph;
     imgTitreGameOver: TGlyph;
@@ -42,6 +36,13 @@ type
     ShadowEffect2: TShadowEffect;
     zoneGameOverScore: TLayout;
     zoneGameOverFond: TRectangle;
+    ZoneMenuBoutons: TFlowLayout;
+    btnJouer: TButton;
+    btnBruitagesOnOff: TButton;
+    btnMusiqueOnOff: TButton;
+    btnHallOfFame: TButton;
+    btnCredits: TButton;
+    btnQuitter: TButton;
     procedure FormCreate(Sender: TObject);
     procedure TimerCitrouillesTimer(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -55,6 +56,9 @@ type
       Shift: TShiftState);
     procedure btnPartageClick(Sender: TObject);
     procedure btnRetourGameOverClick(Sender: TObject);
+    procedure ZoneMenuBoutonsResize(Sender: TObject);
+    procedure btnCreditsClick(Sender: TObject);
+    procedure btnMusiqueOnOffClick(Sender: TObject);
   private
     { Déclarations privées }
     listeCitrouilles: TListeCitrouilles;
@@ -96,8 +100,8 @@ end;
 procedure TfrmMain.afficheGameOver;
 begin
   imgTitreGameOver.images := dmAssetsTitres.imgTitres;
-  lblGameOver.Text := 'Score : ' + score.score.ToString + sLineBreak + 'Niveau : ' +
-    score.niveau.ToString;
+  lblGameOver.Text := 'Score : ' + score.score.ToString + sLineBreak +
+    'Niveau : ' + score.niveau.ToString;
   actPartage.TextMessage := 'J''ai atteint le niveau ' + score.niveau.ToString +
     ' avec le score de ' + score.score.ToString +
     ' points sur Pumpkin Killer. Feras-tu mieux que moi ? #pumpkinkiller #gamolf https://pumpkinkiller.gamolf.fr';
@@ -135,9 +139,19 @@ begin
   EcranEnCours := eecMenu;
 end;
 
+procedure TfrmMain.btnCreditsClick(Sender: TObject);
+begin
+// TODO : à compléter
+end;
+
 procedure TfrmMain.btnJouerClick(Sender: TObject);
 begin
   afficheJeu;
+end;
+
+procedure TfrmMain.btnMusiqueOnOffClick(Sender: TObject);
+begin
+// TODO : à compléter
 end;
 
 procedure TfrmMain.btnPartageClick(Sender: TObject);
@@ -345,53 +359,74 @@ begin
 {$ENDREGION}
 end;
 
-procedure TfrmMain.zoneMenuResize(Sender: TObject);
+procedure TfrmMain.ZoneMenuBoutonsResize(Sender: TObject);
+const
+  CSizeMin = 48; // minimum pixel size for a clicable element
+  CSizeMax = 200;
+  CMarge = 24;
 var
-  largeur, hauteur: single;
-  X, Y, w, h: single;
+  // nbButtons: integer;
+  i: integer;
+  Taille: single;
+  Marge: single;
 begin
-  hauteur := zoneMenu.height / 3;
-  imgTitreMenu.ImageIndex := ifthen((zoneMenu.width > zoneMenu.height), 1, 0);
-  imgTitreMenu.height := hauteur;
-{$REGION 'gestion des boutons de menus'}
-  btnMusiqueOnOff.Visible := false;
-  { TODO : gérer le bouton de réglage de la musique }
+  btnMusiqueOnOff.Visible := true;
   btnBruitagesOnOff.Visible := false;
   { TODO : gérer le bouton de réglage du son }
-  btnCredits.Visible := false;
-  { TODO : gérer le bouton d'affichage de l'écran de crédits }
+  btnCredits.Visible := true;
   btnHallOfFame.Visible := false;
   { TODO : gérer le bouton d'affichage de l'écran du tableau des scores }
 {$IF defined(ANDROID) or defined(IOS)}
   btnJouer.Visible := true;
   btnQuitter.Visible := false;
-  largeur := zoneMenu.width;
 {$ELSE}
   btnJouer.Visible := true;
   btnQuitter.Visible := true;
-  largeur := zoneMenu.width / 2;
 {$ENDIF}
-  w := min(max(min(200, hauteur - 20), 44), largeur - 20);
-  h := w;
-  X := (largeur - w) / 2 + 10;
-  Y := hauteur + 10;
-  if (btnJouer.Visible) then
+  // nbButtons := 0;
+  // for i := 0 to ZoneMenuBoutons.ChildrenCount - 1 do
+  // if (ZoneMenuBoutons.Children[i] is TButton) and
+  // (ZoneMenuBoutons.Children[i] as TButton).Visible then
+  // inc(nbButtons);
+
+  // nbButtons := (nbButtons div 2) + (nbButtons mod 2);
+
+  Marge := CMarge;
+
+  if (ZoneMenuBoutons.width > ZoneMenuBoutons.height) then
+    Taille := ZoneMenuBoutons.height / 2
+  else
+    Taille := ZoneMenuBoutons.width / 2;
+  Taille := min(Taille - Marge * 2, CSizeMax);
+
+  if Taille < CSizeMin then
   begin
-    btnJouer.width := w;
-    btnJouer.height := h;
-    btnJouer.Position.X := X;
-    btnJouer.Position.Y := Y;
-    X := X + largeur;
+    Marge := Marge - (CSizeMin - Taille) / 2;
+    Taille := CSizeMin;
   end;
-  if (btnQuitter.Visible) then
-  begin
-    btnQuitter.width := w;
-    btnQuitter.height := h;
-    btnQuitter.Position.X := X;
-    btnQuitter.Position.Y := Y;
-    // X := X + largeur;
-  end;
-{$ENDREGION}
+
+  // while ((Taille > CSizeMin) and ((Taille + Marge) * nbButtons * 2 >
+  // ZoneMenuBoutons.width + ZoneMenuBoutons.height)) do
+  // dec(Taille);
+
+  for i := 0 to ZoneMenuBoutons.ChildrenCount - 1 do
+    if (ZoneMenuBoutons.Children[i] is TButton) and
+      (ZoneMenuBoutons.Children[i] as TButton).Visible then
+      with ZoneMenuBoutons.Children[i] as TButton do
+      begin
+        width := Taille;
+        height := Taille;
+        margins.Top := Marge;
+        margins.Bottom := Marge;
+        margins.Left := Marge;
+        margins.Right := Marge;
+      end;
+end;
+
+procedure TfrmMain.zoneMenuResize(Sender: TObject);
+begin
+  imgTitreMenu.ImageIndex := ifthen((zoneMenu.width > zoneMenu.height), 1, 0);
+  imgTitreMenu.height := zoneMenu.height / 3;
 end;
 
 initialization

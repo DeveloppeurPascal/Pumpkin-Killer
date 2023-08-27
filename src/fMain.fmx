@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'PumpkinKiller'
   ClientHeight = 480
-  ClientWidth = 640
+  ClientWidth = 649
   Fill.Bitmap.Bitmap.PNG = {
     89504E470D0A1A0A0000000D49484452000001E0000002D008060000004846A3
     A5000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -16599,72 +16599,79 @@ object frmMain: TfrmMain
   end
   object zoneMenu: TLayout
     Align = Client
-    Size.Width = 640.000000000000000000
+    Size.Width = 649.000000000000000000
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     OnResize = zoneMenuResize
-    object btnJouer: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 6
-      Position.X = 280.000000000000000000
-      Position.Y = 232.000000000000000000
-      TabOrder = 0
-      Text = 'Jouer'
-      OnClick = btnJouerClick
-    end
-    object btnQuitter: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 11
-      Position.X = 288.000000000000000000
-      Position.Y = 240.000000000000000000
-      TabOrder = 1
-      Text = 'Quitter'
-      OnClick = btnQuitterClick
-    end
-    object btnMusiqueOnOff: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 14
-      Position.X = 296.000000000000000000
-      Position.Y = 248.000000000000000000
-      TabOrder = 2
-      Text = 'Musique on/off'
-    end
-    object btnBruitagesOnOff: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 13
-      Position.X = 304.000000000000000000
-      Position.Y = 256.000000000000000000
-      TabOrder = 3
-      Text = 'Son on/off'
-    end
-    object btnCredits: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 5
-      Position.X = 312.000000000000000000
-      Position.Y = 264.000000000000000000
-      TabOrder = 4
-      Text = 'Cr'#233'dits du jeu'
-    end
-    object btnHallOfFame: TButton
-      Anchors = []
-      Images = dmAssetsBoutons.imgBoutons
-      ImageIndex = 3
-      Position.X = 320.000000000000000000
-      Position.Y = 272.000000000000000000
-      TabOrder = 5
-      Text = 'Tableau des scores'
-    end
     object imgTitreMenu: TGlyph
       Align = Top
-      Size.Width = 640.000000000000000000
+      Size.Width = 649.000000000000000000
       Size.Height = 73.000000000000000000
       Size.PlatformDefault = False
+    end
+    object ZoneMenuBoutons: TFlowLayout
+      Align = Client
+      Size.Width = 649.000000000000000000
+      Size.Height = 407.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Justify = Center
+      JustifyLastLine = Center
+      FlowDirection = LeftToRight
+      OnResize = ZoneMenuBoutonsResize
+      object btnJouer: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 6
+        Position.X = 84.500000000000000000
+        TabOrder = 1
+        Text = 'Jouer'
+        OnClick = btnJouerClick
+      end
+      object btnBruitagesOnOff: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 13
+        Position.X = 164.500000000000000000
+        TabOrder = 5
+        Text = 'Son on/off'
+      end
+      object btnMusiqueOnOff: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 14
+        Position.X = 244.500000000000000000
+        TabOrder = 3
+        Text = 'Musique on/off'
+        OnClick = btnMusiqueOnOffClick
+      end
+      object btnHallOfFame: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 3
+        Position.X = 324.500000000000000000
+        TabOrder = 4
+        Text = 'Tableau des scores'
+      end
+      object btnCredits: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 5
+        Position.X = 404.500000000000000000
+        TabOrder = 2
+        Text = 'Cr'#233'dits du jeu'
+        OnClick = btnCreditsClick
+      end
+      object btnQuitter: TButton
+        Anchors = []
+        Images = dmAssetsBoutons.imgBoutons
+        ImageIndex = 11
+        Position.X = 484.500000000000000000
+        TabOrder = 0
+        Text = 'Quitter'
+        OnClick = btnQuitterClick
+      end
     end
   end
   object zoneBackground: TLayout
