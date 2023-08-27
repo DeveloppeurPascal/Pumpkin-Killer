@@ -36,10 +36,6 @@ type
     btnCredits: TButton;
     btnHallOfFame: TButton;
     StyleBook1: TStyleBook;
-    btnOlfSoftware: TButton;
-    btnGamolf: TButton;
-    btnDeveloppeurPascal: TButton;
-    btnDelphi: TButton;
     imgTitreMenu: TGlyph;
     imgTitreGameOver: TGlyph;
     btnRetourGameOver: TButton;
@@ -58,10 +54,6 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
     procedure btnPartageClick(Sender: TObject);
-    procedure btnDelphiClick(Sender: TObject);
-    procedure btnDeveloppeurPascalClick(Sender: TObject);
-    procedure btnGamolfClick(Sender: TObject);
-    procedure btnOlfSoftwareClick(Sender: TObject);
     procedure btnRetourGameOverClick(Sender: TObject);
   private
     { Déclarations privées }
@@ -135,14 +127,6 @@ end;
 procedure TfrmMain.afficheMenu;
 begin
   imgTitreMenu.images := dmAssetsTitres.imgTitres;
-  btnDeveloppeurPascal.images := dmAssetsLogos.imgLogos;
-  btnDeveloppeurPascal.ImageIndex := 3;
-  btnOlfSoftware.images := dmAssetsLogos.imgLogos;
-  btnOlfSoftware.ImageIndex := 2;
-  btnDelphi.images := dmAssetsLogos.imgLogos;
-  btnDelphi.ImageIndex := 0;
-  btnGamolf.images := dmAssetsLogos.imgLogos;
-  btnGamolf.ImageIndex := 1;
   masqueJeu;
   masqueGameOver;
   afficheBackground;
@@ -154,11 +138,6 @@ end;
 procedure TfrmMain.btnJouerClick(Sender: TObject);
 begin
   afficheJeu;
-end;
-
-procedure TfrmMain.btnOlfSoftwareClick(Sender: TObject);
-begin
-  url_Open_In_Browser('https://olfsoftware.fr');
 end;
 
 procedure TfrmMain.btnPartageClick(Sender: TObject);
@@ -188,21 +167,6 @@ end;
 procedure TfrmMain.btnRetourGameOverClick(Sender: TObject);
 begin
   afficheMenu;
-end;
-
-procedure TfrmMain.btnDelphiClick(Sender: TObject);
-begin
-  url_Open_In_Browser('https://www.embarcadero.com/fr/products/delphi');
-end;
-
-procedure TfrmMain.btnDeveloppeurPascalClick(Sender: TObject);
-begin
-  url_Open_In_Browser('https://developpeur-pascal.fr/pumpkin-killer.html');
-end;
-
-procedure TfrmMain.btnGamolfClick(Sender: TObject);
-begin
-  url_Open_In_Browser('https://gamolf.fr');
 end;
 
 procedure TfrmMain.ChangeNbVies;
@@ -427,32 +391,6 @@ begin
     btnQuitter.Position.Y := Y;
     // X := X + largeur;
   end;
-{$ENDREGION}
-{$REGION 'gestion des boutons de sites web'}
-  largeur := zoneMenu.width / 4;
-  w := min(max(min(100, hauteur - 20), 44), largeur - 20);
-  h := w;
-  X := (largeur - w) / 2 + 10;
-  Y := zoneMenu.height - 10 - w;
-  btnOlfSoftware.width := w;
-  btnOlfSoftware.height := h;
-  btnOlfSoftware.Position.X := X;
-  btnOlfSoftware.Position.Y := Y;
-  X := X + largeur;
-  btnDeveloppeurPascal.width := w;
-  btnDeveloppeurPascal.height := h;
-  btnDeveloppeurPascal.Position.X := X;
-  btnDeveloppeurPascal.Position.Y := Y;
-  X := X + largeur;
-  btnDelphi.width := w;
-  btnDelphi.height := h;
-  btnDelphi.Position.X := X;
-  btnDelphi.Position.Y := Y;
-  X := X + largeur;
-  btnGamolf.width := w;
-  btnGamolf.height := h;
-  btnGamolf.Position.X := X;
-  btnGamolf.Position.Y := Y;
 {$ENDREGION}
 end;
 

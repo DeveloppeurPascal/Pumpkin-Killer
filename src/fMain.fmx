@@ -16660,38 +16660,6 @@ object frmMain: TfrmMain
       TabOrder = 5
       Text = 'Tableau des scores'
     end
-    object btnOlfSoftware: TButton
-      Anchors = []
-      Position.X = 328.000000000000000000
-      Position.Y = 280.000000000000000000
-      TabOrder = 6
-      Text = 'Olf Software (site web)'
-      OnClick = btnOlfSoftwareClick
-    end
-    object btnGamolf: TButton
-      Anchors = []
-      Position.X = 336.000000000000000000
-      Position.Y = 288.000000000000000000
-      TabOrder = 7
-      Text = 'Gamolf (site web)'
-      OnClick = btnGamolfClick
-    end
-    object btnDeveloppeurPascal: TButton
-      Anchors = []
-      Position.X = 344.000000000000000000
-      Position.Y = 296.000000000000000000
-      TabOrder = 8
-      Text = 'D'#233'veloppeur Pascal (site web)'
-      OnClick = btnDeveloppeurPascalClick
-    end
-    object btnDelphi: TButton
-      Anchors = []
-      Position.X = 352.000000000000000000
-      Position.Y = 304.000000000000000000
-      TabOrder = 9
-      Text = 'Delphi (site web)'
-      OnClick = btnDelphiClick
-    end
     object imgTitreMenu: TGlyph
       Align = Top
       Size.Width = 640.000000000000000000
