@@ -591,24 +591,24 @@
             <Form>frmMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="dmImages.pas">
+        <DCCReference Include="..\_PRIVE\src\dmImages.pas">
             <Form>dmAssets</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uScores.pas"/>
         <DCCReference Include="uCitrouilles.pas"/>
-        <DCCReference Include="dmBoutons.pas">
+        <DCCReference Include="..\_PRIVE\src\dmBoutons.pas">
             <Form>dmAssetsBoutons</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="dmLogos.pas">
+        <DCCReference Include="..\_PRIVE\src\dmLogos.pas">
             <Form>dmAssetsLogos</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="dmTitres.pas">
+        <DCCReference Include="..\_PRIVE\src\dmTitres.pas">
             <Form>dmAssetsTitres</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
@@ -1339,6 +1339,12 @@
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="OSX64">
+                        <RemoteName>PumpkinKiller</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.dSYM" Configuration="Debug" Class="ProjectOSXDebug">
+                    <Platform Name="OSXARM64">
                         <RemoteName>PumpkinKiller</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
