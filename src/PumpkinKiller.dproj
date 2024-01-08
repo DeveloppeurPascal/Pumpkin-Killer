@@ -469,7 +469,9 @@
         <VerInfo_Build>7</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <BT_BuildType>AppStore</BT_BuildType>
-        <VerInfo_Keys>package=fr.gamolf.pumpkinkiller.android;label=$(MSBuildProjectName);versionCode=7;versionName=1.2;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=Aucune barre de titre;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <VerInfo_Keys>package=fr.gamolf.pumpkinkiller.android;label=$(MSBuildProjectName);versionCode=7;versionName=1.3;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=Aucune barre de titre;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
+        <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <Cfg_2_Android>true</Cfg_2_Android>
@@ -478,8 +480,10 @@
         <VerInfo_Build>6</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <BT_BuildType>AppStore</BT_BuildType>
-        <VerInfo_Keys>package=fr.gamolf.pumpkinkiller.android;label=$(MSBuildProjectName);versionCode=6;versionName=1.2;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=Aucune barre de titre;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <VerInfo_Keys>package=fr.gamolf.pumpkinkiller.android;label=$(MSBuildProjectName);versionCode=6;versionName=1.3;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=Aucune barre de titre;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
+        <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
+        <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -488,10 +492,10 @@
         <VerInfo_BundleId>fr.gamolf.pumpkinkiller.ios64</VerInfo_BundleId>
         <BT_BuildType>AppStore</BT_BuildType>
         <VerInfo_Build>4</VerInfo_Build>
-        <VerInfo_Keys>CFBundleName=Pumpkin Killer;CFBundleDevelopmentRegion=fr;CFBundleDisplayName=Pumpkin Killer;CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.2.4;CFBundleShortVersionString=1.2;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSCameraUsageDescription=The reason for accessing the camera;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;UIStatusBarHidden=true;UIViewControllerBasedStatusBarAppearance=false</VerInfo_Keys>
+        <VerInfo_Keys>CFBundleName=Pumpkin Killer;CFBundleDevelopmentRegion=fr;CFBundleDisplayName=Pumpkin Killer;CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.3.4;CFBundleShortVersionString=1.3;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSCameraUsageDescription=The reason for accessing the camera;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;UIStatusBarHidden=true;UIViewControllerBasedStatusBarAppearance=false</VerInfo_Keys>
         <iOS_BackgroundColor>FFE6ECF1</iOS_BackgroundColor>
         <iOS_DarkBackgroundColor>FFE6ECF1</iOS_DarkBackgroundColor>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
         <Cfg_2>true</Cfg_2>
@@ -505,12 +509,12 @@
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
-        <VerInfo_Build>8</VerInfo_Build>
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleVersion=1.2.8;CFBundleShortVersionString=1.2;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
+        <VerInfo_Build>11</VerInfo_Build>
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleVersion=1.3.11;CFBundleShortVersionString=1.3;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>DeveloperID</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
         <Icon_MainIcon>..\assets\icones\pumpkinkiller.ico</Icon_MainIcon>
         <Icns_MainIcns>..\assets\icones\pumpkinkiller.icns</Icns_MainIcns>
     </PropertyGroup>
@@ -518,12 +522,12 @@
         <DCC_GenerateOSXUniversalBinaryFile>true</DCC_GenerateOSXUniversalBinaryFile>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
         <Icon_MainIcon>..\assets\icones\pumpkinkiller.ico</Icon_MainIcon>
         <Icns_MainIcns>..\assets\icones\pumpkinkiller.icns</Icns_MainIcns>
-        <BT_BuildType>DeveloperID</BT_BuildType>
-        <VerInfo_Build>4</VerInfo_Build>
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleVersion=1.2.4;CFBundleShortVersionString=1.2;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
+        <BT_BuildType>AppStore</BT_BuildType>
+        <VerInfo_Build>6</VerInfo_Build>
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.pumpkinkiller.ios64;CFBundleVersion=1.3.6;CFBundleShortVersionString=1.3;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
@@ -531,10 +535,10 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1036</VerInfo_Locale>
         <VerInfo_Build>2</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.2.0.2;InternalName=;LegalCopyright=2018 Patrick Prémartin;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.pumpkinkiller.w32;ProductName=$(MSBuildProjectName);ProductVersion=1.2;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.3.0.2;InternalName=;LegalCopyright=2018-2024 Patrick Prémartin;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.pumpkinkiller.w32;ProductName=$(MSBuildProjectName);ProductVersion=1.3;Comments=</VerInfo_Keys>
         <Icon_MainIcon>..\assets\icones\pumpkinkiller.ico</Icon_MainIcon>
         <Icns_MainIcns>..\assets\icones\pumpkinkiller.icns</Icns_MainIcns>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
         <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
@@ -543,10 +547,10 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1036</VerInfo_Locale>
         <VerInfo_Build>2</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.2.0.2;InternalName=;LegalCopyright=2018 Patrick Prémartin;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.pumpkinkiller.w64;ProductName=$(MSBuildProjectName);ProductVersion=1.2;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.3.0.2;InternalName=;LegalCopyright=2018-2024 Patrick Prémartin;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.pumpkinkiller.w64;ProductName=$(MSBuildProjectName);ProductVersion=1.3;Comments=</VerInfo_Keys>
         <Icon_MainIcon>..\assets\icones\pumpkinkiller.ico</Icon_MainIcon>
         <Icns_MainIcns>..\assets\icones\pumpkinkiller.icns</Icns_MainIcns>
-        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
         <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <ItemGroup>
@@ -602,10 +606,10 @@
                     <Source Name="MainSource">PumpkinKiller.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Package Serveurs Office 2000 Embarcadero C++Builder</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Package Serveurs Office XP Embarcadero C++Builder</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Composants Microsoft Office 2000 Sample Automation Server Wrapper</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Composants Microsoft Office XP Sample Automation Server Wrapper</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Package Serveurs Office 2000 Embarcadero C++Builder</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Package Serveurs Office XP Embarcadero C++Builder</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Composants Microsoft Office 2000 Sample Automation Server Wrapper</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Composants Microsoft Office XP Sample Automation Server Wrapper</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
@@ -1305,12 +1309,6 @@
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="OSX64\Release\PumpkinKiller" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="OSX64">
-                        <RemoteName>PumpkinKiller</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="OSXARM64\Debug\PumpkinKiller.dSYM" Configuration="Debug" Class="ProjectOSXDebug">
-                    <Platform Name="OSXARM64">
                         <RemoteName>PumpkinKiller</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
