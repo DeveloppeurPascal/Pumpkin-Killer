@@ -28,7 +28,8 @@ uses
   FMX.StdActns,
   FMX.MediaLibrary.Actions,
   dmBoutons,
-  Gamolf.FMX.MusicLoop, FMX.Filter.Effects;
+  Gamolf.FMX.MusicLoop,
+  FMX.Filter.Effects;
 
 type
   TEcranEnCours = (eecAucun, eecMenu, eecJeu, eecFinJeu, eecScores, eecCredits);
