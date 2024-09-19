@@ -186,7 +186,7 @@ begin
   masqueMenu;
   afficheBackground;
 
-  lblCreditsDuJeu.Text := 'Pumpkin Killer' + slinebreak + '(c) 2018-' +
+  lblCreditsDuJeu.Text := 'Pumpkin Killer v1.4' + slinebreak + '(c) 2018-' +
     formatdatetime('YYYY', now) + ' Patrick Prémartin' + slinebreak +
     slinebreak;
   lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
