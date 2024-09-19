@@ -1,6 +1,6 @@
 # Pumpkin Killer
 
-[This page in english.](README.md)
+[This page in English.](README.md)
 
 Petit jeu vidéo pour passer le temps : dégommez les citrouilles qui font la tête et laissez les autres traverser tranquillement votre écran. Gagnez le plus de points possibles pour atteindre votre niveau maximal.
 
@@ -35,7 +35,7 @@ Ce projet utilise des dépendances sous forme de sous modules. Ils seront absent
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
-Ces codes sources sont distribués sous licence [AGPL 3.0 ou ultérieure] (https://choosealicense.com/licenses/agpl-3.0/).
+Ces codes sources sont distribués sous licence [AGPL 3.0 ou ultérieure](https://choosealicense.com/licenses/agpl-3.0/).
 
 Vous êtes globalement libre d'utiliser le contenu de ce dépôt de code n'importe où à condition :
 * d'en faire mention dans vos projets
