@@ -6,6 +6,12 @@ A little video game to pass the time: take out the sulking pumpkins and let the 
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 
+## Talks and conferences
+
+### Twitch
+
+Follow my development streams of software, video games, mobile applications and websites on [my Twitch channel](https://www.twitch.tv/patrickpremartin) or as replays on [Serial Streameur](https://serialstreameur.fr/jv-pumpkin-killer.php) mostly in French.
+
 ## Using this game on Android or iOS (iPhone, iPod touch, iPad, iPad Pro)
 
 The mobile version of this game is available on [Google Play](https://play.google.com/store/apps/details?id=fr.gamolf.pumpkinkiller.android), [Amazon Appstore](https://www.amazon.com/gp/product/B07JYXY7C1) and the [App Store](https://apps.apple.com/app/pumpkin-killer/id1440388507).
@@ -32,6 +38,16 @@ This project uses dependencies in the form of sub-modules. They will be absent f
 
 * [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) must be installed in the ./lib-externes/Delphi-Game-Engine subfolder.
 * [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) must be installed in the ./lib-externes/librairies subfolder.
+
+## Compatibility
+
+As an [Embarcadero MVP](https://www.embarcadero.com/resources/partners/mvp-directory), I benefit from the latest versions of [Delphi](https://www.embarcadero.com/products/delphi) and [C++ Builder](https://www.embarcadero.com/products/cbuilder) in [RAD Studio](https://www.embarcadero.com/products/rad-studio) as soon as they are released. I therefore work with these versions.
+
+Normally, my libraries and components should also run on at least the current version of [Delphi Community Edition](https://www.embarcadero.com/products/delphi/starter).
+
+There's no guarantee of compatibility with earlier versions, even though I try to keep my code clean and avoid using too many of the new ways of writing in it (type inference, inline var and multiline strings).
+
+If you detect any anomalies on earlier versions, please don't hesitate to [report them](https://github.com/DeveloppeurPascal/Pumpkin-Killer/issues) so that I can test and try to correct or provide a workaround.
 
 ## License to use this code repository and its contents
 

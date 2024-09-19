@@ -6,6 +6,12 @@ Petit jeu vidéo pour passer le temps : dégommez les citrouilles qui font la t�
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
+## Présentations et conférences
+
+### Twitch
+
+Suivez mes streams de développement de logiciels, jeux vidéo, applications mobiles et sites web sur [ma chaîne Twitch](https://www.twitch.tv/patrickpremartin) ou en rediffusion sur [Serial Streameur](https://serialstreameur.fr/jv-pumpkin-killer.php) la plupart du temps en français.
+
 ## Utiliser ce jeu vidéo sur Android ou iOS (iPhone, iPod touch, iPad, iPad Pro)
 
 La version mobile de ce jeu vidéo est téléchargeable depuis [Google Play](https://play.google.com/store/apps/details?id=fr.gamolf.pumpkinkiller.android), [Amazon Appstore](https://www.amazon.com/gp/product/B07JYXY7C1) et l'[App Store](https://apps.apple.com/app/pumpkin-killer/id1440388507).
@@ -32,6 +38,16 @@ Ce projet utilise des dépendances sous forme de sous modules. Ils seront absent
 
 * [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) doit être installé dans le sous dossier ./lib-externes/Delphi-Game-Engine
 * [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) doit être installé dans le sous dossier ./lib-externes/librairies
+
+## Compatibilité
+
+En tant que [MVP Embarcadero](https://www.embarcadero.com/resources/partners/mvp-directory) je bénéficie dès qu'elles sortent des dernières versions de [Delphi](https://www.embarcadero.com/products/delphi) et [C++ Builder](https://www.embarcadero.com/products/cbuilder) dans [RAD Studio](https://www.embarcadero.com/products/rad-studio). C'est donc dans ces versions que je travaille.
+
+Normalement mes librairies et composants doivent aussi fonctionner au moins sur la version en cours de [Delphi Community Edition](https://www.embarcadero.com/products/delphi/starter).
+
+Aucune garantie de compatibilité avec des versions antérieures n'est fournie même si je m'efforce de faire du code propre et ne pas trop utiliser les nouvelles façons d'écrire dedans (type inference, inline var et multilines strings).
+
+Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/Pumpkin-Killer/issues) pour que je teste et tente de corriger ou fournir un contournement.
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
