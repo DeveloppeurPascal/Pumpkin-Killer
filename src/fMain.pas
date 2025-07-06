@@ -25,8 +25,8 @@
   https://github.com/DeveloppeurPascal/Pumpkin-Killer
 
   ***************************************************************************
-  File last update : 2025-07-03T10:44:32.077+02:00
-  Signature : 175d5360616a3af2931a042025c74a98c8d3f17e
+  File last update : 2025-07-06T19:02:34.000+02:00
+  Signature : 16eaf717296cb8f94b382bd6f6bcd64d303fab6c
   ***************************************************************************
 *)
 
@@ -186,7 +186,7 @@ begin
   masqueMenu;
   afficheBackground;
 
-  lblCreditsDuJeu.Text := 'Pumpkin Killer v1.4' + slinebreak + '(c) 2018-' +
+  lblCreditsDuJeu.Text := 'Pumpkin Killer v1.5' + slinebreak + '(c) 2018-' +
     formatdatetime('YYYY', now) + ' Patrick Prémartin' + slinebreak +
     slinebreak;
   lblCreditsDuJeu.Text := lblCreditsDuJeu.Text +
