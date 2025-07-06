@@ -1,34 +1,34 @@
-/// <summary>
-/// ***************************************************************************
-///
-/// Pumpkin Killer
-///
-/// Copyright 2018-2024 Patrick Prémartin under AGPL 3.0 license.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-/// DEALINGS IN THE SOFTWARE.
-///
-/// ***************************************************************************
-///
-/// Author(s) :
-/// Patrick PREMARTIN
-///
-/// Site :
-/// https://pumpkinkiller.gamolf.fr/
-///
-/// Project site :
-/// https://github.com/DeveloppeurPascal/Pumpkin-Killer
-///
-/// ***************************************************************************
-/// File last update : 2024-09-19T19:09:44.225+02:00
-/// Signature : 3cb4ecfc690a36d46cc6d202f93514c116022f4f
-/// ***************************************************************************
-/// </summary>
+(* C2PP
+  ***************************************************************************
+
+  Pumpkin Killer
+
+  Copyright 2018-2025 Patrick Prémartin under AGPL 3.0 license.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  DEALINGS IN THE SOFTWARE.
+
+  ***************************************************************************
+
+  Author(s) :
+  Patrick PREMARTIN
+
+  Site :
+  https://pumpkinkiller.gamolf.fr/
+
+  Project site :
+  https://github.com/DeveloppeurPascal/Pumpkin-Killer
+
+  ***************************************************************************
+  File last update : 2025-07-03T10:44:32.077+02:00
+  Signature : 4894d2e76a613aa4bce4080a2a0600a8822c7146
+  ***************************************************************************
+*)
 
 unit uCitrouilles;
 
